@@ -19,6 +19,10 @@ https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/Melee_Combo.
   
 * Multiplayer&Projectile  
 ![image](https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/MultiPlayer_Projectile.gif)   
-https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/MultiPlayer_Projectile.gif
+https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/MultiPlayer_Projectile.gif  
+
+* FootIK Setup(ALSV4 c++ Version)  
+![image](https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/FOOT_IK.gif)   
+https://github.com/ctsheng/UERPGGame/blob/main/Documentation/Photos/FOOT_IK.gif
 
 
