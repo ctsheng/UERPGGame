@@ -51,7 +51,7 @@ void URPGAbility_Dash::ActivateAbility(const FGameplayAbilitySpecHandle Handle, 
         MontageTask->ReadyForActivation();
 
         auto MotionTask = UAbilityTask_ApplyRootMotionConstantForce::ApplyRootMotionConstantForce(this, "Dash", Char->GetActorForwardVector(),
-            Strength, DashTime, false, nullptr, ERootMotionFinishVelocityMode::MaintainLastRootMotionVelocity, FVector(), 0);
+            Strength, DashTime, false, nullptr, ERootMotionFinishVelocityMode::MaintainLastRootMotionVelocity, FVector(), 0, true);
 
         MotionTask->ReadyForActivation();
         MotionTask->OnFinish.AddDynamic(this, &URPGAbility_Dash::OnMotionFinish);

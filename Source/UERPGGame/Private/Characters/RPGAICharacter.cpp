@@ -45,7 +45,7 @@ void ARPGAICharacter::HandleDamage(float DamageAmount, const FHitResult& HitInfo
 {
     Super::HandleDamage(DamageAmount, HitInfo, DamageTags, InstigatorPawn, DamageCauser);
 
-    FRootMotionSource_ConstantForce* ConstantForce = new FRootMotionSource_ConstantForce();
+    /*FRootMotionSource_ConstantForce* ConstantForce = new FRootMotionSource_ConstantForce();
 	ConstantForce->InstanceName = FName("ApplyRootMotionConstantForce");
 	ConstantForce->AccumulateMode = ERootMotionAccumulateMode::Override;
 	ConstantForce->Priority = 5;
@@ -55,7 +55,7 @@ void ARPGAICharacter::HandleDamage(float DamageAmount, const FHitResult& HitInfo
 	ConstantForce->FinishVelocityParams.Mode = ERootMotionFinishVelocityMode::MaintainLastRootMotionVelocity;
 	ConstantForce->FinishVelocityParams.SetVelocity = FVector();
 	ConstantForce->FinishVelocityParams.ClampVelocity = 0;
-	int RootMotionSourceID = Cast<UCharacterMovementComponent>(GetMovementComponent())->ApplyRootMotionSource(ConstantForce);
+	int RootMotionSourceID = Cast<UCharacterMovementComponent>(GetMovementComponent())->ApplyRootMotionSource(ConstantForce);*/
 
     if (IsAlive())
     {
