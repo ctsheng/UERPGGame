@@ -13,7 +13,7 @@
 #include "Kismet/KismetSystemLibrary.h"
 #include "Curves/CurveVector.h"
 #include "Components/TimelineComponent.h"
-#include "Components/ALSMathLibrary.h"
+#include "Library/ALSMathLibrary.h"
 #include "ALSMantleComponent.generated.h"
 
 

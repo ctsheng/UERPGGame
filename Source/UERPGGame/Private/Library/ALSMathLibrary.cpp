@@ -6,7 +6,8 @@
 // Contributors:    Achim Turan
 
 
-#include "Components/ALSMathLibrary.h"
+#include "Library/ALSMathLibrary.h"
+#include "Library/ALSCharacterStructLibrary.h"
 #include "Components/CapsuleComponent.h"
 
 FTransform UALSMathLibrary::MantleComponentLocalToWorld(const FALSComponentAndTransform& CompAndTransform)
@@ -74,4 +75,32 @@ bool UALSMathLibrary::AngleInRange(float Angle, float MinAngle, float MaxAngle, 
 		return Angle >= MinAngle - Buffer && Angle <= MaxAngle + Buffer;
 	}
 	return Angle >= MinAngle + Buffer && Angle <= MaxAngle - Buffer;
+}
+
+EALSMovementDirection UALSMathLibrary::CalculateQuadrant(EALSMovementDirection Current, float FRThreshold,
+                                                         float FLThreshold,
+                                                         float BRThreshold, float BLThreshold, float Buffer,
+                                                         float Angle)
+{
+	// Take the input angle and determine its quadrant (direction). Use the current Movement Direction to increase or
+	// decrease the buffers on the angle ranges for each quadrant.
+	if (AngleInRange(Angle, FLThreshold, FRThreshold, Buffer,
+	                 Current != EALSMovementDirection::Forward || Current != EALSMovementDirection::Backward))
+	{
+		return EALSMovementDirection::Forward;
+	}
+
+	if (AngleInRange(Angle, FRThreshold, BRThreshold, Buffer,
+	                 Current != EALSMovementDirection::Right || Current != EALSMovementDirection::Left))
+	{
+		return EALSMovementDirection::Right;
+	}
+
+	if (AngleInRange(Angle, BLThreshold, FLThreshold, Buffer,
+	                 Current != EALSMovementDirection::Right || Current != EALSMovementDirection::Left))
+	{
+		return EALSMovementDirection::Left;
+	}
+
+	return EALSMovementDirection::Backward;
 }

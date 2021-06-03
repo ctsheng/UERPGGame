@@ -15,7 +15,7 @@
 #include "Curves/CurveVector.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
-#include "Components/ALSMathLibrary.h"
+#include "Library/ALSMathLibrary.h"
 
 
 const FName NAME_MantleEnd(TEXT("MantleEnd"));
